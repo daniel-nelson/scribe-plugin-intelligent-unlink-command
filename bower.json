@@ -1,3 +1,6 @@
 {
-  "name": "scribe-plugin-intelligent-unlink-command"
+  "name": "scribe-plugin-intelligent-unlink-command",
+  "dependencies": {
+    "scribe-common": "0.0.1"
+  }
 }
