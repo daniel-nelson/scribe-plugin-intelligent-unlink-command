@@ -4,7 +4,7 @@
   "main": "src/scribe-plugin-intelligent-unlink-command.js",
   "dependencies": {
     "scribe-editor-common": "~0.0.2"
-  }
+  },
   "devDependencies": {
     "plumber": "~0.3.0",
     "plumber-all": "~0.3.0",
