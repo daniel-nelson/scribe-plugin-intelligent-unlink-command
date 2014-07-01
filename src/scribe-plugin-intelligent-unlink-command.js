@@ -25,7 +25,14 @@ define(['scribe-common/element'], function (element) {
             });
 
             if (aNode) {
+              // place "selection" markers
+              selection.placeMarkers();
+
+              // unwrap the <a> element and remove it,
               element.unwrap(aNode.parentNode, aNode);
+
+              // finally restore selection to the intiial position
+              selection.selectMarkers();
             }
           });
         } else {
