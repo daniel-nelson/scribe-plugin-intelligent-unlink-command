@@ -27,7 +27,7 @@ define(['scribe-common/element'], function (element) {
             if (aNode) {
               element.unwrap(aNode.parentNode, aNode);
             }
-          }.bind(this));
+          });
         } else {
           scribe.api.Command.prototype.execute.apply(this, arguments);
         }
