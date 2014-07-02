@@ -25,13 +25,14 @@ define(['scribe-common/element'], function (element) {
             });
 
             if (aNode) {
-              // place "selection" markers
+              // we must save and then restore the selection because unwrapping
+              // the anchor loses the current selection
               selection.placeMarkers();
 
-              // unwrap the <a> element and remove it,
+              // unwrap the A element's children, then remove it
               element.unwrap(aNode.parentNode, aNode);
 
-              // finally restore selection to the intiial position
+              // finally restore selection to the initial position
               selection.selectMarkers();
             }
           });
