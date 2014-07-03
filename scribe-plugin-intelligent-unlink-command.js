@@ -1033,7 +1033,7 @@ define('lodash-amd/modern/collections/contains',['../internals/baseIndexOf', '..
   return contains;
 });
 
-define('scribe-common/element',['lodash-amd/modern/collections/contains'], function (contains) {
+define('scribe-common/src/element',['lodash-amd/modern/collections/contains'], function (contains) {
 
   
 
@@ -1063,7 +1063,7 @@ define('scribe-common/element',['lodash-amd/modern/collections/contains'], funct
 
 });
 
-define('scribe-plugin-intelligent-unlink-command',['scribe-common/element'], function (element) {
+define('scribe-plugin-intelligent-unlink-command',['scribe-common/src/element'], function (element) {
 
   /**
    * This plugin modifies the `unlink` command so that, when the user's
@@ -1090,9 +1090,17 @@ define('scribe-plugin-intelligent-unlink-command',['scribe-common/element'], fun
             });
 
             if (aNode) {
+              // we must save and then restore the selection because unwrapping
+              // the anchor loses the current selection
+              selection.placeMarkers();
+
+              // unwrap the A element's children, then remove it
               element.unwrap(aNode.parentNode, aNode);
+
+              // finally restore selection to the initial position
+              selection.selectMarkers();
             }
-          }.bind(this));
+          });
         } else {
           scribe.api.Command.prototype.execute.apply(this, arguments);
         }
