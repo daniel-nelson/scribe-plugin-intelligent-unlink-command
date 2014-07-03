@@ -3,7 +3,7 @@
   "version": "0.1.3",
   "main": "src/scribe-plugin-intelligent-unlink-command.js",
   "dependencies": {
-    "scribe-common": "~0.0.3"
+    "scribe-common": "~0.0.4"
   },
   "devDependencies": {
     "plumber": "~0.3.0",

@@ -1,4 +1,4 @@
-define(['scribe-common/element'], function (element) {
+define(['scribe-common/src/element'], function (element) {
 
   /**
    * This plugin modifies the `unlink` command so that, when the user's
